@@ -3,6 +3,10 @@
    ============================================================ */
 
 @media (max-width: 1120px) {
+  .theme-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .section-head {
     grid-template-columns: 1fr;
     align-items: start;

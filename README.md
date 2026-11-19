@@ -1,6 +1,6 @@
 # Moto Dash · 项目介绍页
 
-Moto Dash 的独立静态介绍站：产品说明、15 套主题预览、功能演示、APK 下载与作者支持。
+Moto Dash 的独立静态介绍站：产品说明、16 套主题预览、功能演示、APK 下载与作者支持。
 
 纯 HTML / CSS / 原生 JavaScript，无构建步骤、无外部 CDN、无追踪。整目录就是发布产物。
 
@@ -43,7 +43,7 @@ http://localhost:4173/?static=1
 ├── js/
 │   └── main.js         导航、滚动进度、筛选、灯箱翻页、演示、下载占位
 └── assets/
-    ├── previews/       15 套正式主题横屏预览（webp）
+    ├── previews/       16 套正式主题横屏预览（webp）
     ├── portraits/      横竖屏与日夜对比截图（webp）
     ├── features/       冷车红区截图（webp）
     ├── support/        抖音主页码、微信赞赏码（webp）
