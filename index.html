@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moto Dash · 摩托车 OBD 仪表盘</title>
+  <meta name="description" content="Moto Dash 是一款 Android 摩托车 OBD 仪表盘：通过 BLE ELM327 读取标准 OBD-II 实时数据，提供 15 套主题、60 秒趋势、高德导航镜像、档位自动标定和冷车动态红区。免费、无账号、不上传数据。">
+  <meta name="theme-color" content="#08090a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Moto Dash · 手机就是你的摩托车仪表盘">
+  <meta property="og:description" content="BLE ELM327 + 标准 OBD-II，15 套主题，横竖屏独立排版。免费、无账号、不上传数据。">
+  <meta property="og:image" content="https://baagee.github.io/moto-dash-app-pages/assets/brand/og.png">
+  <meta property="og:url" content="https://baagee.github.io/moto-dash-app-pages/">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/icon.svg">
+  <link rel="preload" href="assets/fonts/BarlowCondensed-Bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/previews/vanta.webp" as="image">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/features.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-head" id="siteHead">
+    <div class="wrap head-inner">
+      <a class="brand" href="#top" aria-label="Moto Dash 首页">
+        <img src="assets/brand/icon.svg" alt="" width="34" height="34">
+        <span class="brand-text">
+          MOTO DASH
+          <small>OBD-II DASHBOARD</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="siteNav" aria-label="主导航">
+        <a href="#capability">能力</a>
+        <a href="#themes">主题</a>
+        <a href="#features">特色</a>
+        <a href="#compat">兼容</a>
+        <a href="#support">支持</a>
+      </nav>
+
+      <a class="btn btn-small" href="#download" data-download>下载 APK <span class="arrow">↗</span></a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="siteNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+  </header>
+
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <main id="main">
+    <!-- ==================== 首屏 ==================== -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Android · BLE ELM327 · Standard OBD-II</p>
+          <h1>手机就是你的<span class="accent">摩托车仪表盘</span></h1>
+          <p class="lead">
+            插上 ELM327，手机通过蓝牙读取标准 OBD-II 实时数据。
+            转速、时速、水温、进气温度、电压、节气门和负载，显示在 15 套主题里。
+            自动连接，断线重连，换主题不打断数据。
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#download" data-download>下载 Android APK <span class="arrow">↗</span></a>
+            <a class="btn btn-ghost" href="#themes">先看 15 套主题</a>
+          </div>
+          <ul class="hero-badges">
+            <li>免费工具</li>
+            <li>无账号</li>
+            <li>数据不上传</li>
+            <li>Android 6.0+</li>
+          </ul>
+        </div>
+
+        <figure class="screen-main">
+          <div class="screen-frame">
+            <img src="assets/previews/vanta.webp" alt="VANTA 主题横屏仪表盘实机截图：中央 270 度转速环、时速读数与四段色区" width="844" height="390">
+          </div>
+          <figcaption>
+            <span>VANTA · 夜航 HUD</span>
+            <span>844 × 390 · 横屏界面</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="wrap stat-strip">
+        <div class="stat">
+          <b>15<em> 套</em></b>
+          <span>正式主题</span>
+        </div>
+        <div class="stat">
+          <b>8<em>+</em></b>
+          <span>车辆指标</span>
+        </div>
+        <div class="stat">
+          <b>60<em>s</em></b>
+          <span>历史趋势</span>
+        </div>
+        <div class="stat">
+          <b>0<em> 账号</em></b>
+          <span>无需注册与云端</span>
+        </div>
+      </div>
+
+      <div class="theme-marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>VANTA</span><span>WUYAGE</span><span>ROAD RASH</span><span>MDT-88</span><span>DORA MOTO</span>
+          <span>RED-02</span><span>METRO</span><span>DASH_JS</span><span>MAGI / ORG-01</span><span>CYBER LUCYNA</span>
+          <span>FLAT-REV</span><span>RACE LINE</span><span>LEAN VECTOR</span><span>NIGHT AMBER</span><span>CRIMSON TACH</span>
+          <span>VANTA</span><span>WUYAGE</span><span>ROAD RASH</span><span>MDT-88</span><span>DORA MOTO</span>
+          <span>RED-02</span><span>METRO</span><span>DASH_JS</span><span>MAGI / ORG-01</span><span>CYBER LUCYNA</span>
+          <span>FLAT-REV</span><span>RACE LINE</span><span>LEAN VECTOR</span><span>NIGHT AMBER</span><span>CRIMSON TACH</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 数据链 ==================== -->
+    <section class="section" id="capability">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div>
+            <p class="eyebrow">01 / Data link</p>
+            <h2>一根线，<br><em>读懂发动机。</em></h2>
+          </div>
+          <p class="head-copy">
+            OBD-II 是电喷汽车和摩托车的标准诊断接口。插上 BLE ELM327 适配器，
+            Moto Dash 读取 ECU 返回的实时数据（PID）——<strong>不拆车、不刷写、不改装</strong>。
+            手机负责显示，适配器负责协议转换，ECU 保持原样。
+          </p>
+        </header>
+
+        <div class="chain reveal" aria-label="数据链路：手机通过 BLE 连接 ELM327，再通过标准 OBD-II 读取 ECU">
+          <div class="chain-node">
+            <span class="node-no">01 / PHONE</span>
+            <b>Android 手机</b>
+            <small>显示 · 设置 · 日志</small>
+          </div>
+          <div class="chain-arrow" aria-hidden="true">⇄</div>
+          <div class="chain-node">
+            <span class="node-no">02 / BLE</span>
+            <b>蓝牙 4.0 GATT</b>
+            <small>Scan · Connect · Notify</small>
+          </div>
+          <div class="chain-arrow" aria-hidden="true">⇄</div>
+          <div class="chain-node">
+            <span class="node-no">03 / ADAPTER</span>
+            <b>ELM327</b>
+            <small>AT 指令 · 协议转换</small>
+          </div>
+          <div class="chain-arrow" aria-hidden="true">⇄</div>
+          <div class="chain-node">
+            <span class="node-no">04 / ECU</span>
+            <b>标准 OBD-II</b>
+            <small>ISO 15765 CAN</small>
+          </div>
+        </div>
+        <p class="chain-note">兼容性取决于车型和适配器固件。当前版本不支持非标协议和 K-line 特殊适配。</p>
+
+        <div class="metrics-row reveal" aria-label="实时车辆指标">
+          <div class="metric-cell"><b>RPM</b><span>发动机转速</span></div>
+          <div class="metric-cell"><b>KM/H</b><span>车速</span></div>
+          <div class="metric-cell"><b>°C</b><span>冷却液温度</span></div>
+          <div class="metric-cell"><b>°C</b><span>进气温度</span></div>
+          <div class="metric-cell"><b>kPa</b><span>进气压力</span></div>
+          <div class="metric-cell"><b>V</b><span>蓄电池电压</span></div>
+          <div class="metric-cell"><b>%</b><span>节气门位置</span></div>
+          <div class="metric-cell"><b>%</b><span>发动机负载</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 核心能力 ==================== -->
+    <section class="section" id="core">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div>
+            <p class="eyebrow">02 / Core</p>
+            <h2>仪表背后，<br><em>是一套连接逻辑。</em></h2>
+          </div>
+          <p class="head-copy">
+            真车链路里，掉线、乱序、无响应都是常态。界面之外的部分按“能一直骑”来设计：
+            自动连接、同一时间只跑一个连接任务、旧会话不污染新读数、超时重试，以及能导出的诊断日志。
+          </p>
+        </header>
+
+        <div class="cap-grid reveal">
+          <article class="cap-card">
+            <span class="cap-card__no">A / TELEMETRY</span>
+            <h3>实时遥测</h3>
+            <p>转速、时速、水温、进气温度、进气压力、电压、节气门和负载。每个指标独立刷新，<strong>仪表局部重绘</strong>，不重建整页。</p>
+            <div class="cap-card__spec"><span>60 秒窗口</span><span>局部重绘</span><span>独立刷新</span></div>
+          </article>
+
+          <article class="cap-card">
+            <span class="cap-card__no">B / CONNECTION</span>
+            <h3>连接与重连</h3>
+            <p>权限申请、记住上次设备、冷启动不弹窗自动连接；断线后先用较短超时直连，再定向扫描上次设备。同一时间只跑一个连接任务。</p>
+            <div class="cap-card__spec"><span>GATT</span><span>自动连接</span><span>前后台</span></div>
+          </article>
+
+          <article class="cap-card">
+            <span class="cap-card__no">C / RELIABILITY</span>
+            <h3>数据可靠性</h3>
+            <p>ELM327 命令一条一条排队，按截止时间调度，避免中低优先级指标一直排不上。NO DATA 不当作 0；断链保留最后读数并标记为过期，只有明确不支持才标记为不可用。</p>
+            <div class="cap-card__spec"><span>公平调度</span><span>过期保留</span><span>能力判断</span></div>
+          </article>
+
+          <article class="cap-card">
+            <span class="cap-card__no">D / HISTORY</span>
+            <h3>60 秒趋势</h3>
+            <p>固定 60 秒内存窗口，不写入磁盘，也不按车型改变。趋势线只连接真实样本，长时间没有数据就留空，不把缺失点当成 0。</p>
+            <div class="cap-card__spec"><span>固定窗口</span><span>不补 0</span><span>纵轴固定</span></div>
+          </article>
+
+          <article class="cap-card">
+            <span class="cap-card__no">E / SETTINGS</span>
+            <h3>统一设置</h3>
+            <p>量程、四段色区、轮询间隔、车速修正、扫描超时、屏幕亮度模式、方向锁定和刘海避让。拖动只预览，松手提交，300ms 后自动保存。</p>
+            <div class="cap-card__spec"><span>统一校验</span><span>热更新</span><span>撤销</span></div>
+          </article>
+
+          <article class="cap-card">
+            <span class="cap-card__no">F / LOCAL FIRST</span>
+            <h3>本地优先</h3>
+            <p>无账号、无云同步、不上传任何数据。网络只用于可选场景素材和应用更新包下载；更新包交给系统安装器，由你确认安装。</p>
+            <div class="cap-card__spec"><span>无账号</span><span>不上传</span><span>系统安装器</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 主题墙 ==================== -->
+    <section class="section" id="themes">
+      <div class="wrap">
+        <div class="theme-head-row reveal">
+          <div>
+            <p class="eyebrow">03 / Themes</p>
+            <h2>15 套主题，<br><em>换皮不断连。</em></h2>
+          </div>
+          <p>
+            不是把同一种布局换颜色。每套主题有自己的字体、刻度、动效和信息编排；
+            切换只换界面，<strong>连接、设置和 60 秒趋势都保留</strong>。
+          </p>
+        </div>
+
+        <div class="filters reveal" role="group" aria-label="按风格筛选主题">
+          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">全部 15</button>
+          <button class="filter-btn" type="button" data-filter="night" aria-pressed="false">夜航</button>
+          <button class="filter-btn" type="button" data-filter="performance" aria-pressed="false">性能</button>
+          <button class="filter-btn" type="button" data-filter="retro" aria-pressed="false">复古</button>
+          <button class="filter-btn" type="button" data-filter="daily" aria-pressed="false">日常</button>
+        </div>
+
+        <div class="theme-grid reveal" id="themeGrid">
+          <article class="theme-card" data-cat="night">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/vanta.webp" data-title="VANTA · 夜航 HUD" data-alt="VANTA 主题横屏仪表盘" aria-label="查看 VANTA 主题大图">
+              <span class="theme-num">01</span>
+              <img src="assets/previews/vanta.webp" alt="VANTA 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>VANTA <em>夜航 HUD</em></h3>
+              <p>默认主题。270° 转速环、换挡灯带和 60 秒趋势，信息密度最高的一套。</p>
+              <span class="theme-tag">夜航</span>
+            </div>
+          </article>
+
+          <article class="theme-card" data-cat="daily">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/wuyage.webp" data-title="WUYAGE · 纸感机械" data-alt="WUYAGE 主题横屏仪表盘" aria-label="查看 WUYAGE 主题大图">
+              <span class="theme-num">02</span>
+              <img src="assets/previews/wuyage.webp" alt="WUYAGE 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>WUYAGE <em>纸感机械</em></h3>
+              <p>机械手臂随转速摆动，转轴徽章显示档位，日落后自动切到夜间皮肤。</p>
+              <span class="theme-tag">日常</span>
+            </div>
+          </article>
+
+          <article class="theme-card" data-cat="retro">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/road_rash.webp" data-title="ROAD RASH · 90 年代像素" data-alt="ROAD RASH 主题横屏仪表盘" aria-label="查看 ROAD RASH 主题大图">
+              <span class="theme-num">03</span>
+              <img src="assets/previews/road_rash.webp" alt="ROAD RASH 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>ROAD RASH <em>90 年代像素</em></h3>
+              <p>全屏骑行视频随车速变速，HUD 浮在视频上。</p>
+              <span class="theme-tag">复古</span>
+            </div>
+          </article>
+
+          <article class="theme-card" data-cat="retro">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/mdt-88.webp" data-title="MDT-88 · CRT 终端" data-alt="MDT-88 主题横屏仪表盘" aria-label="查看 MDT-88 主题大图">
+              <span class="theme-num">04</span>
+              <img src="assets/previews/mdt-88.webp" alt="MDT-88 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>MDT-88 <em>CRT 终端</em></h3>
+              <p>像素字体、通道状态和四段连接阶段条，像一台车载终端。</p>
+              <span class="theme-tag">复古</span>
+            </div>
+          </article>
+
+          <article class="theme-card" data-cat="daily">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/dora_moto.webp" data-title="DORA MOTO · 绘本骑行" data-alt="DORA MOTO 主题横屏仪表盘" aria-label="查看 DORA MOTO 主题大图">
+              <span class="theme-num">05</span>
+              <img src="assets/previews/dora_moto.webp" alt="DORA MOTO 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>DORA MOTO <em>绘本骑行</em></h3>
+              <p>竹蜻蜓随转速旋转，速度气泡和昼夜自动换肤。</p>
+              <span class="theme-tag">日常</span>
+            </div>
+          </article>
+
+          <article class="theme-card" data-cat="performance">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/red-02.webp" data-title="RED-02 · 红色遥测" data-alt="RED-02 主题横屏仪表盘" aria-label="查看 RED-02 主题大图">
+              <span class="theme-num">06</span>
+              <img src="assets/previews/red-02.webp" alt="RED-02 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>RED-02 <em>红色遥测</em></h3>
+              <p>270° 缺口表盘、红色刻度和 60 秒趋势，读起来很直接。</p>
+              <span class="theme-tag">性能</span>
+            </div>
+          </article>
+
+          <article class="theme-card" data-cat="daily">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/metro.webp" data-title="METRO · Metro 磁贴" data-alt="METRO 主题横屏仪表盘" aria-label="查看 METRO 主题大图">
+              <span class="theme-num">07</span>
+              <img src="assets/previews/metro.webp" alt="METRO 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>METRO <em>Metro 磁贴</em></h3>
+              <p>大号数字和 8 块信息磁贴，底部是细线趋势。</p>
+              <span class="theme-tag">日常</span>
+            </div>
+          </article>
+
+          <article class="theme-card" data-cat="retro">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/dash_js.webp" data-title="DASH_JS · 代码编辑器" data-alt="DASH_JS 主题横屏仪表盘" aria-label="查看 DASH_JS 主题大图">
+              <span class="theme-num">08</span>
+              <img src="assets/previews/dash_js.webp" alt="DASH_JS 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>DASH_JS <em>代码编辑器</em></h3>
+              <p>代码行号栏、240° 转速盘和终端风格的网关页，给写代码的人。</p>
+              <span class="theme-tag">复古</span>
+            </div>
+          </article>
+
+          <article class="theme-card" data-cat="retro">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/magi_org01.webp" data-title="MAGI / ORG-01 · MAGI 终端" data-alt="MAGI ORG-01 主题横屏仪表盘" aria-label="查看 MAGI ORG-01 主题大图">
+              <span class="theme-num">09</span>
+              <img src="assets/previews/magi_org01.webp" alt="MAGI ORG-01 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>MAGI / ORG-01 <em>MAGI 终端</em></h3>
+              <p>全息人物、霓虹页签和 56 列转速带，像驾驶舱。</p>
+              <span class="theme-tag">复古</span>
+            </div>
+          </article>
+
+          <article class="theme-card" data-cat="night">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/cyber_lucyna.webp" data-title="CYBER LUCYNA · 霓虹终端" data-alt="CYBER LUCYNA 主题横屏仪表盘" aria-label="查看 CYBER LUCYNA 主题大图">
+              <span class="theme-num">10</span>
+              <img src="assets/previews/cyber_lucyna.webp" alt="CYBER LUCYNA 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>CYBER LUCYNA <em>霓虹终端</em></h3>
+              <p>270° 表盘、扫描线和速度粒子，夜间骑行很抢眼的一套。</p>
+              <span class="theme-tag">夜航</span>
+            </div>
+          </article>
+
+          <article class="theme-card" data-cat="daily">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/flat-rev.webp" data-title="FLAT-REV · 平面极简" data-alt="FLAT-REV 主题横屏仪表盘" aria-label="查看 FLAT-REV 主题大图">
+              <span class="theme-num">11</span>
+              <img src="assets/previews/flat-rev.webp" alt="FLAT-REV 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>FLAT-REV <em>平面极简</em></h3>
+              <p>黑底细线、横向转速带、压弯倾角和 G 值，没有多余装饰。</p>
+              <span class="theme-tag">日常</span>
+            </div>
+          </article>
+
+          <article class="theme-card" data-cat="performance">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/race_line.webp" data-title="RACE LINE · 赛线条 HUD" data-alt="RACE LINE 主题横屏仪表盘" aria-label="查看 RACE LINE 主题大图">
+              <span class="theme-num">12</span>
+              <img src="assets/previews/race_line.webp" alt="RACE LINE 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>RACE LINE <em>赛线条 HUD</em></h3>
+              <p>48 段转速轨、12 秒速度柱和急加速 / 急刹车告警。</p>
+              <span class="theme-tag">性能</span>
+            </div>
+          </article>
+
+          <article class="theme-card" data-cat="performance">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/lean_vector.webp" data-title="LEAN VECTOR · 荧光绿极简" data-alt="LEAN VECTOR 主题横屏仪表盘" aria-label="查看 LEAN VECTOR 主题大图">
+              <span class="theme-num">13</span>
+              <img src="assets/previews/lean_vector.webp" alt="LEAN VECTOR 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>LEAN VECTOR <em>荧光绿极简</em></h3>
+              <p>超重斜体时速、压弯摩托姿态和 5 张遥测卡。</p>
+              <span class="theme-tag">性能</span>
+            </div>
+          </article>
+
+          <article class="theme-card" data-cat="night">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/night_amber.webp" data-title="NIGHT AMBER · 深夜琥珀" data-alt="NIGHT AMBER 主题横屏仪表盘" aria-label="查看 NIGHT AMBER 主题大图">
+              <span class="theme-num">14</span>
+              <img src="assets/previews/night_amber.webp" alt="NIGHT AMBER 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>NIGHT AMBER <em>深夜琥珀</em></h3>
+              <p>全宽红色转速带、琥珀档位窗和 180° 水温拱。</p>
+              <span class="theme-tag">夜航</span>
+            </div>
+          </article>
+
+          <article class="theme-card" data-cat="performance">
+            <button class="theme-shot" type="button" data-gallery="themes" data-full="assets/previews/crimson_tach.webp" data-title="CRIMSON TACH · 红白性能" data-alt="CRIMSON TACH 主题横屏仪表盘" aria-label="查看 CRIMSON TACH 主题大图">
+              <span class="theme-num">15</span>
+              <img src="assets/previews/crimson_tach.webp" alt="CRIMSON TACH 主题横屏仪表盘" width="844" height="390" loading="lazy">
+            </button>
+            <div class="theme-info">
+              <h3>CRIMSON TACH <em>红白性能</em></h3>
+              <p>240° 双圆盘、悬浮指针和日夜双皮肤。</p>
+              <span class="theme-tag">性能</span>
+            </div>
+          </article>
+        </div>
+
+        <p class="theme-footnote">只展示 15 套正式主题。</p>
+      </div>
+    </section>
+
+    <!-- ==================== 特色功能 ==================== -->
+    <section class="section" id="features">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div>
+            <p class="eyebrow">04 / Signature</p>
+            <h2>它和普通 OBD App，<br><em>差在这些地方。</em></h2>
+          </div>
+          <p class="head-copy">
+            读数只是起点。冷车保护、导航镜像、档位标定、日夜皮肤和能排查问题的诊断日志，
+            都是日常骑行会用到的功能。
+          </p>
+        </header>
+
+        <div class="feature-grid reveal">
+          <!-- 冷车动态红区 -->
+          <article class="feature-card feature-card--warmup">
+            <div class="feature-card__eyebrow"><span class="badge">SIGNATURE</span><span>冷车保护</span></div>
+            <h3>冷车动态红区</h3>
+            <p>
+              冷车时，发动机还没到工作温度，红线不该按热车标准来画。水温从冷到热，
+              四段色区从<strong>量程 60% 的位置沿 30°C 斜坡回到你设置的红线</strong>；
+              只改仪表显示，不动已保存的设置。拖动下方水温，看红区怎么让路。
+            </p>
+
+            <div class="redline-demo" id="redlineDemo" data-target="70">
+              <div class="redline-readout">
+                <span>冷却液 <b id="coolantValue">42</b> °C</span>
+                <span>红线起点 <b id="redlineValue">6,000</b> RPM</span>
+                <span>色区比例 <b id="kValue">0.60</b></span>
+              </div>
+              <div class="rpm-scale" aria-hidden="true">
+                <div class="zone-bar" id="zoneBar">
+                  <i class="zone-normal" style="width:30%"></i>
+                  <i class="zone-caution" style="width:10%"></i>
+                  <i class="zone-warning" style="width:10%"></i>
+                  <i class="zone-danger" style="width:50%"></i>
+                </div>
+                <div class="rpm-ticks">
+                  <span>0</span><span>3k</span><span>6k</span><span>9k</span><span>12k</span>
+                </div>
+              </div>
+              <div class="zone-legend">
+                <span><i class="zone-normal"></i>正常</span>
+                <span><i class="zone-caution"></i>注意</span>
+                <span><i class="zone-warning"></i>警告</span>
+                <span><i class="zone-danger"></i>危险</span>
+              </div>
+              <input class="redline-slider" id="coolantSlider" type="range" min="40" max="70" step="1" value="42" aria-label="模拟冷却液温度，40 到 70 摄氏度">
+              <div class="demo-caption">
+                <span>示意：量程 0–12,000 · 热车红区 10,000 RPM</span>
+                <span>目标水温 70 °C</span>
+              </div>
+            </div>
+
+            <div class="demo-shots">
+              <figure class="demo-shot">
+                <img src="assets/features/warmup-cold.webp" alt="冷车 40 摄氏度时的 VANTA 仪表，转速色区整体前移" width="844" height="390" loading="lazy">
+                <span>40 °C · 色区前移</span>
+              </figure>
+              <figure class="demo-shot">
+                <img src="assets/features/warmup-hot.webp" alt="热车 70 摄氏度时的 VANTA 仪表，转速色区恢复完整" width="844" height="390" loading="lazy">
+                <span>70 °C · 恢复完整</span>
+              </figure>
+            </div>
+
+            <div class="feature-card__foot">
+              <span>默认开启</span><span>热车目标 40–90 °C 可调</span><span>不动已保存色区</span>
+            </div>
+          </article>
+
+          <!-- 高德导航镜像 -->
+          <article class="feature-card feature-card--nav">
+            <div class="feature-card__eyebrow"><span>NAVIGATION</span><span>本地镜像</span></div>
+            <h3>高德导航镜像</h3>
+            <p>通过本地 Binder 读取手机上的高德导航，把转向、道路、剩余里程、车道、红绿灯读秒和限速显示在仪表顶栏。<strong>不联网、不读剪贴板、不画地图</strong>。</p>
+
+            <div class="navmock" role="img" aria-label="导航镜像示意：320 米后右转，限速 50，剩余 4.2 公里">
+              <div class="navmock-top">
+                <span class="navmock-turn" aria-hidden="true">↰</span>
+                <span class="navmock-dist"><b>320 m</b><small>右转进入学院路</small></span>
+                <span class="navmock-limit" aria-hidden="true">50</span>
+              </div>
+              <div class="navmock-road"><span>学院路</span><span>至 目的地</span></div>
+              <div class="navmock-progress" aria-hidden="true"><i></i></div>
+              <div class="navmock-meta">
+                <span>剩余 4.2 km</span><span>6 分钟</span><span class="lights">● 3 个红灯 · 12s</span>
+              </div>
+              <div class="navmock-lanes" aria-hidden="true">
+                <i class="on"></i><i class="on"></i><i></i><i></i>
+              </div>
+            </div>
+
+            <div class="feature-card__foot">
+              <span>车道 / 红绿灯 / 限速</span><span>敏感数据不落盘</span>
+            </div>
+          </article>
+
+          <!-- 档位自动标定 -->
+          <article class="feature-card feature-card--gear">
+            <div class="feature-card__eyebrow"><span>GEAR</span><span>自动标定</span></div>
+            <h3>档位自动标定</h3>
+            <p>引导骑行完成标定后，用 RPM 和车速推算档位。未标定或不确定时统一显示 <span class="mono">--</span>，不猜。</p>
+
+            <div class="gear-demo" aria-label="六个档位的转速比示意">
+              <div class="gear-row"><b>1</b><span class="track"><i></i></span><span>12.4</span></div>
+              <div class="gear-row"><b>2</b><span class="track"><i></i></span><span>8.9</span></div>
+              <div class="gear-row"><b>3</b><span class="track"><i></i></span><span>7.1</span></div>
+              <div class="gear-row"><b>4</b><span class="track"><i></i></span><span>5.8</span></div>
+              <div class="gear-row"><b>5</b><span class="track"><i></i></span><span>4.9</span></div>
+              <div class="gear-row"><b>6</b><span class="track"><i></i></span><span>4.2</span></div>
+            </div>
+            <div class="gear-summary">
+              <span>档位 <b>1–6</b></span>
+              <span>数据质量 <b>良好</b></span>
+              <span>车辆档案 <b>已保存</b></span>
+            </div>
+            <p class="gear-note">标定结果会写进车辆档案；换车或改齿比后需要重新标定。</p>
+
+            <div class="feature-card__foot">
+              <span>仅支持 5/6 档手动</span><span>AT / CVT / 电动不提供</span>
+            </div>
+          </article>
+
+          <!-- 日夜自动换肤 -->
+          <article class="feature-card feature-card--daynight">
+            <div class="feature-card__eyebrow"><span>DAY / NIGHT</span><span>自动换肤</span></div>
+            <h3>日落后，自动换肤。</h3>
+            <p>按日出日落自动切换皮肤，并调整 App 内亮度。手动选日间或夜间只换皮肤，不改系统亮度。WUYAGE、DORA MOTO 和 CRIMSON TACH 支持日夜双皮肤。</p>
+
+            <div class="compare" id="compare">
+              <div class="compare-frame">
+                <img src="assets/portraits/wuyage.webp" alt="WUYAGE 主题白天竖屏仪表盘" width="390" height="844">
+                <div class="compare-night" id="compareNight">
+                  <img src="assets/portraits/wuyage-night.webp" alt="WUYAGE 主题夜间竖屏仪表盘" width="390" height="844">
+                </div>
+                <span class="compare-handle" id="compareHandle" aria-hidden="true">↔</span>
+                <input class="compare-range" id="compareRange" type="range" min="0" max="100" value="52" step="1" aria-label="拖动查看 WUYAGE 白天与夜间对比">
+              </div>
+              <div class="compare-label"><span>DAY</span><span>NIGHT</span></div>
+            </div>
+
+            <div class="feature-card__foot">
+              <span>日出日落驱动</span><span>无定位时按 06:00–18:00 判断</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 横竖屏 ==================== -->
+    <section class="section" id="layout">
+      <div class="wrap">
+        <div class="devices reveal">
+          <div class="device-stage" aria-label="同一套主题的横屏与竖屏排版">
+            <div class="device device--landscape">
+              <img src="assets/previews/vanta.webp" alt="VANTA 主题横屏仪表盘" width="844" height="390" loading="lazy">
+              <span class="device-label">Landscape · 844 × 390</span>
+            </div>
+            <div class="device device--portrait">
+              <img src="assets/portraits/vanta.webp" alt="VANTA 主题竖屏仪表盘" width="390" height="844" loading="lazy">
+              <span class="device-label">Portrait · 390 × 844</span>
+            </div>
+          </div>
+
+          <div class="device-copy">
+            <p class="eyebrow">05 / Layout</p>
+            <h3>横屏是仪表，<br>竖屏是支架。</h3>
+            <p>
+              15 套主题都有独立的横屏和竖屏排版，不是把同一张图拉伸。
+              横屏优先信息密度，竖屏固定顶栏、内容可滚动；安全区、刘海避让和字体缩放由应用统一处理。
+            </p>
+            <ul>
+              <li>横竖屏两套独立布局，不是简单缩放</li>
+              <li>全屏沉浸，状态栏和导航栏由应用控制</li>
+              <li>支持跟随系统 / 固定横屏 / 固定竖屏</li>
+              <li>系统字体放大时，功能文字仍保持可读</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 兼容与边界 ==================== -->
+    <section class="section" id="compat">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div>
+            <p class="eyebrow">06 / Compatibility</p>
+            <h2>先确认，<br><em>它能连上你的车。</em></h2>
+          </div>
+          <p class="head-copy">
+            这是一个 Android + BLE ELM327 + 标准 OBD-II 的工具，不是通用诊断仪。
+            先把边界写清楚，省得下载后才发现不兼容。
+          </p>
+        </header>
+
+        <div class="compat-grid reveal">
+          <div class="compat-col compat-col--yes">
+            <h3><span>✓</span> 支持</h3>
+            <ul class="compat-list">
+              <li><b>Android 6.0 及以上</b>（minSdk 23），arm64-v8a 为主</li>
+              <li><b>BLE 4.0 GATT</b> 的 ELM327 兼容适配器</li>
+              <li><b>标准 OBD-II</b>，目标车型按 ISO 15765 CAN 验证</li>
+              <li>摩托车优先；标准 OBD-II 汽车可连接并读取实时数据</li>
+              <li>前台精确定位：经纬度与海拔</li>
+              <li>可选网络：只用于场景素材和应用更新包下载</li>
+            </ul>
+          </div>
+
+          <div class="compat-col compat-col--no">
+            <h3><span>×</span> 不支持 / 注意</h3>
+            <ul class="compat-list">
+              <li><b>iOS</b>：当前版本仅 Android</li>
+              <li>经典蓝牙 SPP、Wi-Fi 适配器</li>
+              <li>非标协议、K-line 车型特殊适配</li>
+              <li>后台定位、轨迹记录、地图绘制、语音导航</li>
+              <li>静默安装、账号体系、云同步</li>
+              <li>车速修正系数是车型标定值，换车需重新标定；档位只适用于 5/6 档手动变速箱</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="compat-callout reveal">
+          <strong>免费声明</strong>
+          <p>
+            Moto Dash 是免费工具，所有功能开放使用，不存在任何强制付费项目。
+            本软件禁止售卖，任何付费出售本应用的行为均属盗版。
+            官方渠道仅以抖音号 <b>@Kfkrks</b>（抖音 ID <b>16592703</b>）为准，官方不会私下索要费用。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 下载 ==================== -->
+    <section class="section" id="download">
+      <div class="wrap download-grid">
+        <div class="download-copy reveal">
+          <p class="eyebrow">07 / Get started</p>
+          <h2>点火。<br><em>上路。</em></h2>
+          <p>
+            下载 APK，插上适配器，授权蓝牙。剩下的交给自动连接：
+            有上次设备就直接连接，失败再打开连接页让你选。
+          </p>
+
+          <div class="steps">
+            <div class="step">
+              <b>01</b>
+              <span><strong>找到 OBD 接口</strong>插入 BLE ELM327 适配器，打开电门或点火。</span>
+            </div>
+            <div class="step">
+              <b>02</b>
+              <span><strong>打开 App，授权蓝牙</strong>Android 12+ 只需扫描/连接权限；11 及以下还需要定位权限，并打开系统定位。</span>
+            </div>
+            <div class="step">
+              <b>03</b>
+              <span><strong>选择设备，开始骑行</strong>连接成功后进入仪表盘；顶栏可随时打开连接页或设置。</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="download-card reveal" aria-label="APK 下载信息">
+          <h3>Android APK</h3>
+          <div class="dl-version">
+            <span class="pill">v0.1.3</span>
+            <span class="pill">build 51</span>
+            <span class="pill">arm64-v8a</span>
+            <span class="pill">正式版</span>
+          </div>
+
+          <dl class="spec-table">
+            <dt>系统版本</dt><dd>Android 6.0+</dd>
+            <dt>安装包大小</dt><dd>≈ 16 MB</dd>
+            <dt>适配器</dt><dd>BLE ELM327</dd>
+            <dt>车辆协议</dt><dd>标准 OBD-II</dd>
+            <dt>账号 / 云</dt><dd>不需要</dd>
+          </dl>
+
+          <a class="btn" href="#download" data-download data-pending="true">下载 APK <span class="arrow">↗</span></a>
+          <p class="dl-hint is-pending">
+            下载地址即将提供。<br>
+            最新版本与更新进度会在抖音 @Kfkrks 发布。
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ==================== 支持作者 ==================== -->
+    <section class="section" id="support">
+      <div class="wrap">
+        <div class="support-head reveal">
+          <div>
+            <p class="eyebrow">08 / Support</p>
+            <h2>关注，或者<br><em>请我喝杯咖啡。</em></h2>
+          </div>
+          <p>
+            Moto Dash 是免费工具，所有功能开放使用。如果它帮到了你，可以自愿支持；
+            <strong>赞赏不解锁任何功能</strong>，也不影响后续更新。
+          </p>
+        </div>
+
+        <div class="support-grid reveal">
+          <article class="support-card">
+            <button class="qr-button" type="button" data-full="assets/support/douyin.webp" data-title="抖音 · @Kfkrks" data-alt="Moto Dash 作者抖音主页二维码" aria-label="放大抖音主页二维码">
+              <img src="assets/support/douyin.webp" alt="抖音主页二维码，抖音号 Kfkrks" width="640" height="640" loading="lazy">
+            </button>
+            <div>
+              <h3>抖音主页</h3>
+              <p class="support-sub">实拍、主题更新与骑行日常。</p>
+              <p>扫码或直接打开主页。官方渠道只有这个账号，其他来源都不是官方。</p>
+              <ul class="support-meta">
+                <li>抖音号 <b>@Kfkrks</b></li>
+                <li>抖音 ID <b>16592703</b></li>
+              </ul>
+              <a class="support-link" href="https://www.douyin.com/user/MS4wLjABAAAAUNdm2PAm0EolZmZZmGAk7Q1tDsJiVUiqmB0FMFhb_Rg" target="_blank" rel="noopener noreferrer">
+                打开抖音主页 <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="support-card">
+            <button class="qr-button" type="button" data-full="assets/support/wechat-tip.webp" data-title="微信赞赏 · 收款人 Kfkrks" data-alt="微信赞赏码，收款人 Kfkrks" aria-label="放大微信赞赏码">
+              <img src="assets/support/wechat-tip.webp" alt="微信赞赏码，收款人 Kfkrks" width="640" height="640" loading="lazy">
+            </button>
+            <div>
+              <h3>微信赞赏</h3>
+              <p class="support-sub">自愿捐赠，和软件使用权限无关。</p>
+              <p>微信里长按识别，或截图后用微信「扫一扫」从相册识别。官方捐赠通道只有当前页面的赞赏码。</p>
+              <ul class="support-meta">
+                <li>收款人 <b>Kfkrks</b></li>
+                <li>自愿 · 不影响功能</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="support-note reveal">
+          <div>
+            <b>免费工具</b>
+            <p>所有功能开放使用，不存在强制付费项目。</p>
+          </div>
+          <div>
+            <b>禁止售卖</b>
+            <p>任何付费出售本应用的行为均属盗版。</p>
+          </div>
+          <div>
+            <b>官方渠道</b>
+            <p>仅抖音号 @Kfkrks（ID 16592703）与当前页面。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 页脚 ==================== -->
+  <footer class="site-foot">
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="brand" href="#top" aria-label="返回顶部">
+            <img src="assets/brand/icon.svg" alt="" width="34" height="34">
+            <span class="brand-text">MOTO DASH<small>OBD-II DASHBOARD</small></span>
+          </a>
+          <p>Android 摩托车 OBD 仪表盘。通过 BLE ELM327 读取标准 OBD-II 数据，15 套主题，横竖屏独立排版。</p>
+        </div>
+
+        <div class="foot-col">
+          <h4>页面</h4>
+          <a href="#capability">数据链路</a>
+          <a href="#core">核心能力</a>
+          <a href="#themes">15 套主题</a>
+          <a href="#features">特色功能</a>
+          <a href="#compat">兼容性</a>
+        </div>
+
+        <div class="foot-col">
+          <h4>官方渠道</h4>
+          <a href="https://www.douyin.com/user/MS4wLjABAAAAUNdm2PAm0EolZmZZmGAk7Q1tDsJiVUiqmB0FMFhb_Rg" target="_blank" rel="noopener noreferrer">抖音 @Kfkrks</a>
+          <a href="#support">赞赏说明</a>
+          <a href="#download">下载 APK</a>
+        </div>
+      </div>
+
+      <div class="foot-bottom">
+        <span>免费工具 · 所有功能开放 · 禁止售卖</span>
+        <span>官方抖音 @Kfkrks · 抖音 ID 16592703</span>
+        <span>© <span id="year">2026</span> Moto Dash</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6"/></svg>
+  </button>
+
+  <!-- ==================== 图片灯箱 ==================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="关闭大图">×</button>
+    <button class="lightbox-nav lightbox-nav--prev" id="lightboxPrev" type="button" aria-label="上一张" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <button class="lightbox-nav lightbox-nav--next" id="lightboxNext" type="button" aria-label="下一张" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <figure>
+      <img id="lightboxImg" src="assets/previews/vanta.webp" alt="">
+      <figcaption>
+        <span class="lightbox-caption" aria-live="polite">
+          <b id="lightboxTitle">VANTA</b>
+          <i id="lightboxCounter"></i>
+        </span>
+        <span id="lightboxHint" class="lightbox-hint">按 Esc 或点击背景关闭</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
