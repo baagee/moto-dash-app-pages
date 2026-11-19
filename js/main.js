@@ -10,7 +10,8 @@
    * 发布前在这里替换 APK 地址。
    * 留空时，页面上的“下载 APK”会给出“即将提供”的提示。
    */
-  const DOWNLOAD_URL = "";
+  const DOWNLOAD_URL =
+    "https://github.com/baagee/moto-dash-app-pages/releases/latest/download/moto-dash.apk";
 
   const $ = (selector, scope = document) => scope.querySelector(selector);
   const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
@@ -412,7 +413,8 @@
     const hint = $(".dl-hint");
     if (hint) {
       hint.classList.remove("is-pending");
-      hint.innerHTML = "APK 下载地址会随版本更新。安装前请确认来源为本页面。";
+      hint.innerHTML =
+        "APK 下载地址始终指向 GitHub Releases 的最新版。<br>安装前请确认来源为本页面。";
     }
   } else {
     downloadLinks.forEach((link) => {
